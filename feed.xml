@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom" xmlns:media="http://search.yahoo.com/mrss/">
+    <title>codecorner</title>
+    <link href="https://2024-CodeCornerSoftwares/feed.xml" rel="self" />
+    <link href="https://2024-CodeCornerSoftwares" />
+    <updated>2024-01-05T17:08:45+02:00</updated>
+    <author>
+        <name>Tebogo Mahlomoja</name>
+    </author>
+    <id>https://2024-CodeCornerSoftwares</id>
+
+    <entry>
+        <title>Understanding Kubernetes.</title>
+        <author>
+            <name>Tebogo Mahlomoja</name>
+        </author>
+        <link href="https://2024-CodeCornerSoftwares/understanding-kubernetes.html"/>
+        <id>https://2024-CodeCornerSoftwares/understanding-kubernetes.html</id>
+
+        <updated>2024-01-05T17:08:45+02:00</updated>
+            <summary>
+                <![CDATA[
+                    In the world of modern software development and deployment, Kubernetes has emerged as a leading orchestration tool for managing containerized applications. It simplifies the process of deploying, scaling, and managing containerized applications, providing a robust framework for automating various aspects of application management. Kubernetes, often&hellip;
+                ]]>
+            </summary>
+        <content type="html">
+            <![CDATA[
+                <p dir="auto">In the world of modern software development and deployment, Kubernetes has emerged as a leading orchestration tool for managing containerized applications. It simplifies the process of deploying, scaling, and managing containerized applications, providing a robust framework for automating various aspects of application management.</p>
+<h3 dir="auto" tabindex="-1">What is Kubernetes?</h3>
+<p dir="auto">Kubernetes, often abbreviated as K8s, is an open-source container orchestration platform originally developed by Google. It automates the deployment, scaling, and management of containerized applications. Its primary objective is to abstract the underlying infrastructure and provide a consistent environment for deploying and managing applications across various environments, from local development setups to large-scale production clusters.</p>
+<h3 dir="auto" tabindex="-1">Key Concepts in Kubernetes:</h3>
+<ol dir="auto">
+<li>
+<p dir="auto"><strong>Pods:</strong> The basic unit of deployment in Kubernetes, representing one or more containers that share networking and storage resources.</p>
+</li>
+<li>
+<p dir="auto"><strong>Deployments:</strong> Manage the deployment of replicated applications, ensuring the desired state of a specific number of pods is maintained.</p>
+</li>
+<li>
+<p dir="auto"><strong>Services:</strong> Enable communication between different sets of pods, abstracting away individual IP addresses and providing a stable endpoint for accessing applications.</p>
+</li>
+<li>
+<p dir="auto"><strong>Persistent Volumes:</strong> Provide storage resources that exist beyond the lifecycle of a pod, allowing data to persist even if the pod is deleted.</p>
+</li>
+</ol>
+<h2 dir="auto" tabindex="-1">Creating a Development Cluster using kind</h2>
+<h3 dir="auto" tabindex="-1">What is kind?</h3>
+<p dir="auto">Kubernetes IN Docker (kind) is a tool that allows users to create Kubernetes clusters using Docker containers as nodes. It is particularly useful for testing and development purposes, providing a lightweight and easy-to-set-up environment to simulate a Kubernetes cluster.</p>
+<h3 dir="auto" tabindex="-1">Creating a Kubernetes Cluster Imperatively using kind</h3>
+<ol dir="auto">
+<li><strong>Installation:</strong> Ensure Docker is installed on your machine.</li>
+<li><strong>Install kind:</strong> Download and install kind according to the instructions for your operating system.</li>
+<li><strong>Create a Cluster:</strong> Use the <code>kind create cluster</code> command to create a Kubernetes cluster. This command generates a configuration file and starts the cluster.</li>
+</ol>
+<div class="highlight highlight-source-shell notranslate position-relative overflow-auto" dir="auto">
+<pre>kind create cluster --name my-cluster</pre>
+</div>
+<ol dir="auto" start="4">
+<li><strong>Verify the Cluster:</strong> Use <code>kubectl</code> (Kubernetes command-line tool) to verify the cluster's status.</li>
+</ol>
+<div class="highlight highlight-source-shell notranslate position-relative overflow-auto" dir="auto">
+<pre>kubectl cluster-info --context kind-my-cluster</pre>
+</div>
+<h3 dir="auto" tabindex="-1">Creating a Kubernetes Cluster Declaratively using kind</h3>
+<p dir="auto">Instead of creating a cluster imperatively through commands, Kubernetes configurations can be used to define the cluster in a YAML file.</p>
+<ol dir="auto">
+<li><strong>Create a Cluster Configuration File:</strong> Define the cluster's configuration in a YAML file (e.g., <code>cluster-config.yaml</code>).</li>
+</ol>
+<div class="highlight highlight-source-yaml notranslate position-relative overflow-auto" dir="auto">
+<pre><span class="pl-ent">kind</span>: <span class="pl-s">Cluster</span>
+<span class="pl-ent">apiVersion</span>: <span class="pl-s">kind.x-k8s.io/v1alpha4</span>
+<span class="pl-ent">nodes</span>:
+- <span class="pl-ent">role</span>: <span class="pl-s">control-plane</span>
+- <span class="pl-ent">role</span>: <span class="pl-s">worker</span>
+- <span class="pl-ent">role</span>: <span class="pl-s">worker</span></pre>
+</div>
+<ol dir="auto" start="2">
+<li><strong>Create the Cluster using Configuration File:</strong> Use the <code>kind create cluster</code> command with the <code>--config</code> flag to create the cluster based on the configuration file.</li>
+</ol>
+<div class="highlight highlight-source-shell notranslate position-relative overflow-auto" dir="auto">
+<pre>kind create cluster --name my-cluster --config cluster-config.yaml</pre>
+</div>
+<ol dir="auto" start="3">
+<li><strong>Verify the Cluster:</strong> Use <code>kubectl</code> to ensure the cluster is created successfully.</li>
+</ol>
+<div class="highlight highlight-source-shell notranslate position-relative overflow-auto" dir="auto">
+<pre>kubectl cluster-info --context kind-my-cluster</pre>
+<h3 class="zeroclipboard-container"><span style="color: var(--headings-color); font-family: var(--font-base); font-size: 1.60181em; font-weight: var(--font-weight-bold); letter-spacing: var(--letter-spacing);">Conclusion</span></h3>
+</div>
+<p dir="auto">Kubernetes simplifies the orchestration and management of containerized applications, providing a scalable and efficient platform for developers. Tools like kind enable the creation of Kubernetes clusters for development purposes, allowing developers to simulate and test applications locally before deploying them in production environments. Whether creating clusters imperatively or declaratively, understanding Kubernetes fundamentals empowers developers to harness its capabilities effectively, streamlining the development and deployment of modern applications.</p>
+            ]]>
+        </content>
+    </entry>
+</feed>

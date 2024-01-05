@@ -1,0 +1,3 @@
+User-agent: *
+Disallow:
+Sitemap: https://2024-CodeCornerSoftwares/sitemap.xml
