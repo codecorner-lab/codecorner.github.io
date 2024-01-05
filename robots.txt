@@ -1,3 +1,2 @@
 User-agent: *
 Disallow:
-Sitemap: https://65982b00482624254b19b6dc--nimble-torte-bd2b7a.netlify.app/sitemap.xml
