@@ -1,23 +1,83 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom" xmlns:media="http://search.yahoo.com/mrss/">
     <title>codecorner</title>
-    <link href="https://2024-CodeCornerSoftwares/feed.xml" rel="self" />
-    <link href="https://2024-CodeCornerSoftwares" />
-    <updated>2024-01-05T17:08:45+02:00</updated>
+    <link href="https://65982b00482624254b19b6dc--nimble-torte-bd2b7a.netlify.app/feed.xml" rel="self" />
+    <link href="https://65982b00482624254b19b6dc--nimble-torte-bd2b7a.netlify.app" />
+    <updated>2024-01-05T17:49:35+02:00</updated>
     <author>
         <name>Tebogo Mahlomoja</name>
     </author>
-    <id>https://2024-CodeCornerSoftwares</id>
+    <id>https://65982b00482624254b19b6dc--nimble-torte-bd2b7a.netlify.app</id>
 
     <entry>
-        <title>Understanding Kubernetes.</title>
+        <title>Understanding Kubernetes - Part 2.</title>
         <author>
             <name>Tebogo Mahlomoja</name>
         </author>
-        <link href="https://2024-CodeCornerSoftwares/understanding-kubernetes.html"/>
-        <id>https://2024-CodeCornerSoftwares/understanding-kubernetes.html</id>
+        <link href="https://65982b00482624254b19b6dc--nimble-torte-bd2b7a.netlify.app/understanding-kubernetes-2.html"/>
+        <id>https://65982b00482624254b19b6dc--nimble-torte-bd2b7a.netlify.app/understanding-kubernetes-2.html</id>
 
-        <updated>2024-01-05T17:08:45+02:00</updated>
+        <updated>2024-01-05T17:49:35+02:00</updated>
+            <summary>
+                <![CDATA[
+                    Control Plane Components and Distributed Nature Kubernetes, being a distributed system, consists of several components that collaborate to maintain the desired state of the cluster. At its core are the control plane components, which manage and control the cluster's operation. The distributed nature of Kubernetes&hellip;
+                ]]>
+            </summary>
+        <content type="html">
+            <![CDATA[
+                <h2 dir="auto" tabindex="-1">Control Plane Components and Distributed Nature</h2>
+<p dir="auto">Kubernetes, being a distributed system, consists of several components that collaborate to maintain the desired state of the cluster. At its core are the control plane components, which manage and control the cluster's operation. The distributed nature of Kubernetes allows these components to work together across multiple nodes, ensuring high availability and fault tolerance.</p>
+<h2 dir="auto" tabindex="-1">Control Plane Components</h2>
+<h3 dir="auto" tabindex="-1">etcd</h3>
+<p dir="auto"><strong>Description:</strong> etcd is a distributed key-value store that stores the cluster's configuration data, including cluster state, configurations, and metadata. It serves as Kubernetes' primary database and ensures high availability and consistency.</p>
+<h3 dir="auto" tabindex="-1">API Server</h3>
+<p dir="auto"><strong>Description:</strong> The API Server acts as the front-end for the Kubernetes control plane. It exposes the Kubernetes API, which allows users, other components, and external services to interact with the cluster. All administrative tasks and communication with other components occur through the API Server.</p>
+<h3 dir="auto" tabindex="-1">Scheduler</h3>
+<p dir="auto"><strong>Description:</strong> The Scheduler is responsible for assigning pods to nodes based on resource availability, constraints, policies, and workload requirements. It decides which node should run a particular pod, optimizing resource utilization and maintaining workload balance.</p>
+<h3 dir="auto" tabindex="-1">Controller Manager</h3>
+<p dir="auto"><strong>Description:</strong> The Controller Manager consists of multiple controllers that handle different aspects of the cluster's state. Each controller watches the cluster's state through the API Server and takes corrective actions to ensure that the actual state matches the desired state defined in the cluster's configuration.</p>
+<h3 dir="auto" tabindex="-1">Distributed Nature of Kubernetes</h3>
+<p dir="auto">Kubernetes operates in a distributed manner, meaning its components are spread across multiple nodes within the cluster. This distribution ensures fault tolerance and high availability by preventing a single point of failure. Each control plane component runs on multiple nodes, and when one node fails, another node automatically takes over its responsibilities.</p>
+<h2 dir="auto" tabindex="-1">Control Loops and Reconciliation</h2>
+<h3 dir="auto" tabindex="-1">Control Loops</h3>
+<p dir="auto">Kubernetes employs control loops to maintain the desired state of the cluster continuously. These control loops are continuously running processes within each controller that perform reconciliation—comparing the actual state of the cluster with the desired state and taking necessary actions to converge them.</p>
+<h3 dir="auto" tabindex="-1">Reconciliation Process</h3>
+<ol dir="auto">
+<li>
+<p dir="auto"><strong>Observation:</strong> Controllers watch the cluster's current state by querying the API Server for the desired configuration.</p>
+</li>
+<li>
+<p dir="auto"><strong>Comparison:</strong> The observed state is compared against the desired state specified in the configuration.</p>
+</li>
+<li>
+<p dir="auto"><strong>Decision Making:</strong> If there are any discrepancies between the observed and desired states, the controller makes decisions to reconcile the differences.</p>
+</li>
+<li>
+<p dir="auto"><strong>Action:</strong> The controller takes appropriate actions to bring the actual state in line with the desired state, either by creating, deleting, or updating resources.</p>
+</li>
+</ol>
+<h3 dir="auto" tabindex="-1">Example of Reconciliation</h3>
+<p dir="auto">Consider the ReplicaSet controller, responsible for maintaining a specified number of identical pods. If it observes fewer pods than the desired count:</p>
+<ul dir="auto">
+<li>Observation: The controller checks the actual number of pods.</li>
+<li>Comparison: Compares this count with the desired count specified in the ReplicaSet.</li>
+<li>Decision Making: Recognizes the shortfall and decides to create more pods.</li>
+<li>Action: Initiates the creation of additional pods to meet the desired count.</li>
+</ul>
+<h3 dir="auto" tabindex="-1">Conclusion</h3>
+<p dir="auto">The control plane components of Kubernetes work collaboratively in a distributed environment, ensuring the cluster's stability, fault tolerance, and adherence to the desired state. Through control loops and reconciliation processes, Kubernetes maintains the system's health by continuously monitoring and adjusting its components, thereby enabling a resilient and self-healing infrastructure for containerized applications. Understanding these control plane components and their distributed nature is crucial for managing and operating Kubernetes clusters effectively.</p>
+            ]]>
+        </content>
+    </entry>
+    <entry>
+        <title>Understanding Kubernetes - Part 1.</title>
+        <author>
+            <name>Tebogo Mahlomoja</name>
+        </author>
+        <link href="https://65982b00482624254b19b6dc--nimble-torte-bd2b7a.netlify.app/understanding-kubernetes.html"/>
+        <id>https://65982b00482624254b19b6dc--nimble-torte-bd2b7a.netlify.app/understanding-kubernetes.html</id>
+
+        <updated>2024-01-05T17:49:21+02:00</updated>
             <summary>
                 <![CDATA[
                     In the world of modern software development and deployment, Kubernetes has emerged as a leading orchestration tool for managing containerized applications. It simplifies the process of deploying, scaling, and managing containerized applications, providing a robust framework for automating various aspects of application management. Kubernetes, often&hellip;
